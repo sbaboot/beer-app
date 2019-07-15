@@ -1,0 +1,32 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "lint": "npx eslint --fix .",
+    "start": "npx nodemon app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.0",
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chance": "^1.0.18",
+    "express": "^4.17.1",
+    "lodash": "^4.17.14"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "npx eslint --fix",
+      "git add"
+    ]
+  }
+}
