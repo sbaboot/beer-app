@@ -4,8 +4,8 @@ export function createUserSucess(newUser) {
   return {
     type: CREATE_USER_SUCESS,
     newUser
-  }
-};
+  };
+}
 
 export function updateForm(name, value) {
   return {
@@ -13,11 +13,12 @@ export function updateForm(name, value) {
     name,
     value,
   }
-};
+}
 
 export function getUsersSuccess(users) {
   return {
     type: GET_USERS_SUCESS,
     users,
-  }
-};
+  };
+}
+

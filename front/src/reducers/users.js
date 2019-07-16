@@ -1,13 +1,17 @@
-import { GET_USERS_SUCESS, CREATE_USER_SUCESS } from '../actions/type';
 
-const initialState = [];
+const initialState = {
+  firstName: '',
+  lastName: '',
+  email: '',
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_USERS_SUCESS:
-      return [...state, ...action.users];
-    case CREATE_USER_SUCESS:
-      return [...state, action.newUser];
+    case 'UPDATE_DATAS':
+      return {
+        ...state,
+        [action.name]: action.value
+      };
     default:
       return state;
   }

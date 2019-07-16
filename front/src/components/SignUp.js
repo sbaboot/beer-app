@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -8,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { Link as RouterLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
 import Container from '@material-ui/core/Container';
 
 
@@ -36,9 +38,19 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SignUp() {
+function SignUp({
+  email, firstName, lastName, dispatch
+}) {
   const classes = useStyles();
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    dispatch({
+      type: 'UPDATE_DATAS',
+      name,
+      value,
+    });
+  };
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -58,11 +70,13 @@ export default function SignUp() {
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
+                value={firstName}
                 required
                 fullWidth
                 id="firstName"
                 label="Prénom"
                 autoFocus
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -73,7 +87,9 @@ export default function SignUp() {
                 id="lastName"
                 label="Nom"
                 name="lastName"
+                value={lastName}
                 autoComplete="lname"
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -81,10 +97,12 @@ export default function SignUp() {
                 variant="outlined"
                 required
                 fullWidth
+                value={email}
                 id="email"
                 label="Email"
                 name="email"
                 autoComplete="email"
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -125,3 +143,14 @@ export default function SignUp() {
     </Container>
   );
 }
+
+SignUp.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  email: PropTypes.string.isRequired,
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+};
+
+const mapStateToProps = state => state.users;
+
+export default connect(mapStateToProps)(SignUp);
