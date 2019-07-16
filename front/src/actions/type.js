@@ -1,0 +1,3 @@
+export const GET_USERS_SUCESS = 'GET_USERS_SUCESS';
+export const UPDATE_FORM = 'UPDATE_FORM';
+export const CREATE_USER_SUCESS = 'CREATE_USER_SUCESS';
