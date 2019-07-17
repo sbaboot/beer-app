@@ -8,6 +8,7 @@ app.use(bodyParser.urlencoded({
   extended: false,
 }));
 
-// app.use('/api', require('./routes/api/postFormAirport'));
+app.use('/api', require('./routes/api/getAllBeers'));
+app.use('/api', require('./routes/api/getBeerById'));
 
 app.listen(process.env.PORT || 5000);

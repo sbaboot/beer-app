@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "lint": "npx eslint --fix .",
+    "precommit": "lint-staged",
     "start": "npx nodemon app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

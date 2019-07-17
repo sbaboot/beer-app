@@ -54,6 +54,7 @@ function SignIn() {
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Avatar
+            style={{ objectFit: 'cover' }}
             className={classes.avatar}
             alt="beerApp logo"
             src="https://assets.materialup.com/uploads/d70e4ded-d428-47c2-8fb0-1f2795cc9f02/preview.png"
