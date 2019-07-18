@@ -4,7 +4,7 @@ const router = express.Router();
 const db = require('../../connection');
 
 router.get('/beers', (req, res) => {
-  db.query('SELECT * FROM beer', (err, results) => {
+  db.query('SELECT * FROM beer ORDER BY rate DESC', (err, results) => {
     if (err) {
       return res.status(500).json({
         error: err.message,

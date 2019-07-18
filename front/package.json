@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "npx eslint --fix src/",
-    "precommit": "lint-staged"
+    "precommit": "npx lint-staged"
   },
   "eslintConfig": {
     "extends": "react-app"
