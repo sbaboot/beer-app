@@ -55,7 +55,9 @@ passport.use(new LocalStrategy(
           if (!match) { return done(null, false); }
 
           // récupération des données du user SANS le password
-          const { id, email, firstName, lastName } = user;
+          const {
+            id, email, firstName, lastName,
+          } = user;
           // appel du callback en passant les data en 2ème argument
           return done(null, {
             id, email, firstName, lastName,

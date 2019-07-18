@@ -57,7 +57,7 @@ router.post('/signin',
       // plutôt que de renvoyer l'user !!
       return res.json({
         token,
-        user: req.user, 
+        user: req.user,
       });
     });
   });
